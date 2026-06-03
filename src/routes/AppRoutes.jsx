@@ -3,9 +3,14 @@ import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import Restaurants from "../pages/Restaurants";
 import Cart from "../pages/Cart";
-import Login from "../pages/Login";
+import Profile from "../pages/Profile";
 
-const AppRoutes = () => {
+import Login from  "../features/auth/pages/Login"; 
+import Register from "../features/auth/pages/Register";
+
+import ProtectedRoute from "./ProtectedRoute";
+
+function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
@@ -23,6 +28,20 @@ const AppRoutes = () => {
       <Route
         path="/login"
         element={<Login />}
+      />
+
+      <Route
+        path="/register"
+        element={<Register />}
+      />
+
+      <Route
+        path="/profile"
+        element={
+          <ProtectedRoute>
+            <Profile />
+          </ProtectedRoute>
+        }
       />
     </Routes>
   );
