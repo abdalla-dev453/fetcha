@@ -1,10 +1,13 @@
-import Home from "./pages/Home.jsx"
+import MainLayout from "./components/layout/MainLayout";
+import AppRoutes from "./routes/AppRoutes";
+
+
 function App() {
 
   return (
-    <>
-      <Home />
-    </>
+    <MainLayout>
+      <AppRoutes />
+    </MainLayout>
   )
 }
 
