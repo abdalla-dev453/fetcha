@@ -1,9 +1,12 @@
 import { useParams } from "react-router-dom";
 import restaurants from "../data/restaurants";
 import MenuItemCard from "../components/MenuItemCard";
+import { useCart } from "../../cart/hooks/useCart";
 
 const RestaurantDetailPage = () => {
     const { id } = useParams();
+
+    const { addToCart } = useCart();
 
     const restaurant = restaurants.find(
         (r) => r.id === parseInt(id)
@@ -16,11 +19,6 @@ const RestaurantDetailPage = () => {
             </h1>
         );
     }
-
-    const addToCart = (item) => {
-        console.log(item);
-    }
-
 
     return (
         <div className="p-6 max-w-7xl mx-auto">
