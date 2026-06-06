@@ -2,6 +2,8 @@ import CartItem from "../features/cart/components/CartItem";
 
 import { useCart } from "../features/cart/hooks/useCart";
 
+import { Link } from "react-router-dom";
+
 const Chart = () => {
   const {
     cartItems,
@@ -82,8 +84,10 @@ const Chart = () => {
           KES {total.toFixed(2)}
         </h2>
 
-        <button
+        <Link
+          to="/checkout"
           className="
+            inline-block
             mt-6
             bg-orange-500
             text-white
@@ -93,7 +97,7 @@ const Chart = () => {
           "
         >
           Proceed to Checkout
-        </button>
+        </Link>
       </div>
     </div>
   );

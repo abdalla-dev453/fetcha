@@ -13,6 +13,10 @@ import Register from "../features/auth/pages/Register";
 import RestaurantsPage from "../features/restaurants/pages/RestaurantsPage";
 import RestaurantDetailsPage from "../features/restaurants/pages/RestaurantDetailsPage";
 
+import CheckoutPage from "../features/orders/pages/CheckoutPage";
+import OrdersPage from "../features/orders/pages/OrdersPage";
+import OrderSuccessPage from "../features/orders/pages/OrderSuccessPage";
+
 // Protected Route
 import ProtectedRoute from "./ProtectedRoute";
 
@@ -53,6 +57,34 @@ function AppRoutes() {
         element={
           <ProtectedRoute>
             <Profile />
+          </ProtectedRoute>
+        }
+      />
+
+      {/**checkout */}
+      <Route
+        path="/checkout"
+        element={
+          <ProtectedRoute>
+            <CheckoutPage />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/order-success"
+        element={
+          <ProtectedRoute>
+            <OrderSuccessPage />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/orders"
+        element={
+          <ProtectedRoute>
+            <OrdersPage />
           </ProtectedRoute>
         }
       />
